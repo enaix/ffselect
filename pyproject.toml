@@ -16,3 +16,5 @@ classifiers = [
 keywords = ["data-science", "machine-learning", "feature-selection"]
 dependencies = []
 
+[project.urls]
+Homepage = "https://github.com/enaix/ffselect"

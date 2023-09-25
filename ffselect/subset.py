@@ -3,7 +3,8 @@ from typing import Any
 import sys
 
 
-def MinSubsetSelection(data: Any, target: str, fit_function: Callable[[Any, list[str], str], float], features: list[str], loss: bool = True, interactive: bool = True) -> tuple[float, list[str]]:
+def MinSubsetSelection(data: Any, target: str, fit_function: Callable[[Any, list[str], str], float], features: list[str]
+                       , loss: bool = True, interactive: bool = True) -> tuple[float, list[str]]:
     """
     Minimal feature subset selection algorithm
     :param data: Input data to pass to the fitting function
@@ -53,7 +54,7 @@ def MinSubsetSelection(data: Any, target: str, fit_function: Callable[[Any, list
                 drop = ""
             else:
                 if j < len(train_features) - 1:
-                    f = train_features[:j] + train_features[j+1:]
+                    f = train_features[:j] + train_features[j + 1:]
                 else:
                     f = train_features[:j]
                 drop = train_features[j]
@@ -85,20 +86,23 @@ def MinSubsetSelection(data: Any, target: str, fit_function: Callable[[Any, list
         if interactive:
             if i == 0:
                 if loss:
-                    print(f_string.format(i + 1, n, feature_drop, initial_param, param_local, param_local - initial_param))
+                    print(f_string.format(i + 1, n, feature_drop, initial_param, param_local,
+                                          param_local - initial_param))
                 else:
-                    print(f_string.format(i + 1, n, feature_drop, initial_param, param_local, initial_param - param_local))
+                    print(f_string.format(i + 1, n, feature_drop, initial_param, param_local,
+                                          initial_param - param_local))
             else:
                 if loss:
-                    print(f_string.format(i+1, n, feature_drop, param, param_local, param_local - param))
+                    print(f_string.format(i + 1, n, feature_drop, param, param_local, param_local - param))
                 else:
-                    print(f_string.format(i+1, n, feature_drop, param, param_local, param - param_local))
+                    print(f_string.format(i + 1, n, feature_drop, param, param_local, param - param_local))
 
         res_features = min_f
         train_features = min_f
         param = param_local
 
     return param, res_features
+
 
 def FastSubsetSelection():
     pass
