@@ -25,7 +25,7 @@ Minimal feature subset selection algorithm
 """
 
 
-def FastSubsetSelection(data, target, fit_function, features, threshold = None, loss = True, interactive = True):
+FastSubsetSelection(data, target, fit_function, features, threshold = None, loss = True, interactive = True):
 """
 Fast feature subset selection algorithm in linear time. May drop important features
     data: Input data to pass to the fitting function
