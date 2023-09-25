@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "ffselect"
 version = "0.0.1"
 description = "Fast feature subset selection library"
+readme = "README.md"
 authors = [{ name = "enaix", email = "enaix@protonmail.com" }]
 license = {file="LICENSE"}
 classifiers = [
